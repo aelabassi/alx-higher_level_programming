@@ -8,7 +8,7 @@ if __name__ == "__main__":
         print("Usage: {} <a> <operator> <b>".format(args[0]))
         sys.exit(1)
     operator = args[2]
-    if not(operator in  ("+", "-", "*", "/")):
+    if not(operator in ("+", "-", "*", "/")):
         print("Unknown operator. Available operators: +, -, * and / ")
         sys.exit(1)
     a = int(args[1])
@@ -23,4 +23,3 @@ if __name__ == "__main__":
     elif operator == "/":
         result = div(a, b)
     print("{} {} {} = {}".format(a, operator, b, result))
-  
