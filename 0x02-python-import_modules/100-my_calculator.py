@@ -9,7 +9,7 @@ if __name__ == "__main__":
         sys.exit(1)
     operator = args[2]
     if operator not in ["+", "-", "*", "/"]:
-        print("Unknown operator. Available operators: +, -, * and / ")
+        print("Unknown operator. Available operators: +, -, * and /")
         sys.exit(1)
     a = int(args[1])
     b = int(args[3])
