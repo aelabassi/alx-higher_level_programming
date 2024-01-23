@@ -8,6 +8,7 @@ class Square:
         """Init a new Square
             Args:
                 size (int): size of the square
+                position (tuple): position of the square
         """
         self.size = size
         self.position = position
