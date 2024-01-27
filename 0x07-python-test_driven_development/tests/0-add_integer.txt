@@ -1,0 +1,72 @@
+===========================
+How to Use 0-add_integer.py
+===========================
+
+This module defines an integer addition function ``add_integer(a, b=98)``.
+
+Usage
+=====
+
+```add_integer(...)``` returns the addition of its two arguments. For numbers,
+that value is equivalent to using the ``+`` operator.
+
+::
+
+    >>> add_integer = __import__("0-add_integer").add_integer
+    >>> add_integer(1,2)
+    3
+
+::
+
+    >>> add_integer(100, -2)
+    98
+
+::
+
+    >>> add_integer(2)
+    100
+    >>> add_integer(100.3, -2)
+    98
+    >>> add_integer(-2, -3)
+    -5
+    >>> add_integer(-4, 4)
+    0
+    >>> add_integer(-78)
+    20
+
+::
+
+
+Non-Numbers
+==========
+
+    >>> add_integer("alx", "1337")
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+
+::
+
+    >>> add_integer(4, "Tesla")
+    Traceback (most recent call last):
+        ...
+    TypeError: b must be an integer
+    >>> add_integer(None)
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+
+::
+
+    >>> add_integer(1, float('inf'))
+    Traceback (most recent call last):
+        ...
+    OverflowError: cannot convert infinity to float
+
+::
+
+    >>> add_integer(float('inf'))
+    Traceback (most recent call last):
+        ...
+    OverflowError: cannot convert infinity to float
+
