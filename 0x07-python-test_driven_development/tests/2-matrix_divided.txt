@@ -1,0 +1,64 @@
+============================
+How to use 2-matrix_divided
+============================
+This module defines a function that divides all matrix elements ``2-matrix_divided(matrix, div)``
+
+Usage
+=====
+``` 2-matrix_divided(matrix, div) returns a matrix whose' elements are divided by div  ````
+
+::
+
+    >>> matrix_divided = __import__("2-matrix_divided").matrix_divided
+    >>> matrix = [[1,2,3], [4,5,6]]
+    >>> matrix_divided(matrix, 3)
+    [[1, 2, 3], [4, 5, 6]]
+
+::
+    >>> matrix_divided(matrix, 0)
+    Traceback (most recent call last):
+    ZeroDivisionError:  division by 0
+
+::
+
+    >>> matrix_divided(matrix, "1337")
+    Traceback (most recent call last):
+    TypeError: div must be a number
+
+::
+
+    >>> matrix = []
+    >>> matrix_divided(matrix, 3)
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+::
+
+    >>> matrix_divided(3,3)
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+::
+
+    >>> matrix = [["alx", "1337", "zone01aoujda"]]
+    >>> matrix_divided(matrix, 4)
+    Traceback (most recent call last):
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+::
+
+    >>> matrix = [1,2,3]
+    >>> matrix_divided(matrix, 6)
+    Traceback (most recent call last)
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+::
+
+    >>> matrix = [[1,2], [3,4,5], [4,5,6,7]]
+    >>> matrix_divided(matrix, 7)
+    Traceback (most recent call last):
+    TypeError: Each row of the matrix must have the same size
+
+
+
+
