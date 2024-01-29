@@ -10,4 +10,4 @@ import numpy as np
 
 def lazy_matrix_mul(m_a, m_b):
     """ returns the matrix product (vactorization) """
-    return np.mul(m_a, m_b)
+    return np.matmul(m_a, m_b)
