@@ -7,6 +7,7 @@ This module defines a rectangle class
 class Rectangle:
     """This class defines a rectangle class"""
     number_of_instances = 0
+
     def __init__(self, width=0, height=0) -> None:
         """Initialize a rectangle instance
             Args:
