@@ -79,11 +79,12 @@ class Rectangle:
     def __str__(self):
         """ instance print method (operator<<) """
         rect = []
-        if self.__height != 0 or self.__width != 0:
-            for i in range(self.__height):
-                for _ in range(self.__width):
-                    rect.append("#")
-                if i != self.__height - 1:
-                    rect.append("\n")
-            return "".join(rect)
-        return ""
+        if self.__height == 0 or self.__width == 0:
+            return ""
+
+        for i in range(self.__height):
+            for _ in range(self.__width):
+                rect.append("#")
+            if i != self.__height - 1:
+                rect.append("\n")
+        return "".join(rect)
