@@ -60,6 +60,25 @@ class Rectangle:
             raise ValueError("height must be >= 0")
         self.__height = value
 
+    @staticmethod
+    def bigger_or_equal(rect_1, rect_2):
+        """ static method that compares the area of the two rectangles
+            Args:
+                rect_1 (Rectangle): first rectangle
+                rect_2 (Rectangle): second rectangle
+            Returns: rectangle with the biggest area
+                    rect_1 if they have the same area
+            Raises:
+                TypeError: rect_1 and rect_2 must be an instance of Rectangle
+        """
+        if not isinstance(rect_1, Rectangle):
+            raise TypeError("rect_1 must be an instance of Rectangle")
+        if not isinstance(rect_2, Rectangle):
+            raise TypeError("rect_2 must be an instance of Rectangle")
+        if rect_1.area() >= rect_2.area():
+            return rect_1
+        return rect_2
+
     def area(self):
         """Calculate the area of the rectangle"""
         return self.__height*self.__width
@@ -102,21 +121,3 @@ class Rectangle:
         """ destructor of the class """
         type(self).number_of_instances -= 1
         print("Bye rectangle...")
-
-    @staticmethod
-    def bigger_or_equal(rect_1, rect_2):
-        """ static method that compares the area of the two rectangles
-            Args:
-                rect_1 (Rectangle): first rectangle
-                rect_2 (Rectangle): second rectangle
-            Returns: rectangle with the biggest area
-                    rect_1 if they have the same area
-            Raises:
-                TypeError: rect_1 and rect_2 must be an instance of Rectangle"""
-        if not isinstance(rect_1, Rectangle):
-            raise TypeError("rect_1 must be an instance of Rectangle")
-        if not isinstance(rect_2, Rectangle):
-            raise TypeError("rect_2 must be an instance of Rectangle")
-        if rect_1.area() >= rect_2.area():
-            return rect_1
-        return rect_2
