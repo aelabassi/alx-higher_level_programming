@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+""" This module have a class that reduce memory usage by
+preventing the user from accessing the attributes"""
 
 
 class LockedClass:
