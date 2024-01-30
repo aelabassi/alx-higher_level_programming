@@ -1,11 +1,12 @@
 #!/usr/bin/python3
 """
 This module that have a function that mulltiply two matrices
- 
+
 """
 
+
 def matrix_mul(m_a, m_b):
-    """ This function multiplies two matrices 
+    """ This function multiplies two matrices
         Args:
             m_a (list of lists): matrix of ints or floats
             m_b (list of lists): matrix of ints or floats
@@ -30,10 +31,10 @@ def matrix_mul(m_a, m_b):
     if m_b == [] or m_b == [[]]:
         raise ValueError("m_b can0t be empty")
     if not all((isinstance(el, int) or isinstance(el, float))
-            for el in [i for row in m_a for i in row]):
+       for el in [i for row in m_a for i in row]):
         raise TypeError("m_a should contain only integers or floats")
     if not all((isinstance(el, int) or isinstance(el, float))
-            for el in [i for row in m_b for i in row]):
+       for el in [i for row in m_b for i in row]):
         raise TypeError("m_b should contain only integers or floats")
     if not all(len(m_a[0]) == len(row) for row in m_a):
         raise TypeError("each row of m_a must be of the same size")
