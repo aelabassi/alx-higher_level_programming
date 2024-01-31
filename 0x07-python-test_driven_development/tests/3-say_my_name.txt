@@ -63,3 +63,14 @@ Special cases
     Traceback (most recent call last):
     TypeError: first_name must be a string
 
+::
+
+    >>> say_my_name(2.0, "Sarada")
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+::
+
+    >>> say_my_name("Uchiha", 2.9)
+    Traceback (most recent call last):
+    TypeError: last_name must be a string
