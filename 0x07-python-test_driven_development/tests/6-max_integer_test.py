@@ -6,13 +6,11 @@ the max integer in a list of integers
 
 
 import unittest
-max_integer = __import__('6-max_integer.py').max_integer
+max_integer = __import__('6-max_integer').max_integer
 
 
 class TestMaxInteger(unittest.TestCase):
     """ This class run unittests on 6-max_integer function """
-    def __init__(self) -> None:
-        """Init a new TestMaxInteger instance"""
     def test_integers(self):
         """ test with integers """
         result = max_integer([1, 3, 4, 5, 6])
@@ -33,9 +31,13 @@ class TestMaxInteger(unittest.TestCase):
     def test_strings(self):
         """test with strings"""
         self.assertEqual(max_integer("Deadpool"), "p")
-        self.assertEqual(max_integer("BatmanWhoLaughts"), "t")
+        self.assertEqual(max_integer("BatmanWhoLaughts"), "u")
         self.assertEqual(max_integer("Gengrey"), "y")
-        self.assertEqual(max_integer("WonderWomen"), "W")
+        self.assertEqual(max_integer("wonderwomen"), "w")
+        
+    def test_empty_list(self):
+        """ test with empty list """
+        self.assertEqual(max_integer([]), None)
         
     def test_empty_strings(self):
         """ test with empty strings """
