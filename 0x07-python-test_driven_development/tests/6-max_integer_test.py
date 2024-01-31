@@ -38,6 +38,15 @@ class TestMaxInteger(unittest.TestCase):
     def test_empty_list(self):
         """ test with empty list """
         self.assertEqual(max_integer([]), None)
+    
+    def test_one_element(self):
+        """ test with one element """
+        self.assertEqual(max_integer([6]), 6)
+        
+    def test_list_strings(self):
+        """ test with list of strings """
+        justice_league = ["batman", "superman", "wonderwoman", "flash"]
+        self.assertEqual(max_integer(justice_league), "wonderwoman")
         
     def test_empty_strings(self):
         """ test with empty strings """
