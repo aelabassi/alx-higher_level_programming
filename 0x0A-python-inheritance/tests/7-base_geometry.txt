@@ -1,0 +1,96 @@
+==========================
+Doctests from base geometry
+==========================
+
+Test docstring
+
+::
+    >>> doc = __import__('7-base_geometry').BaseGeometry.__doc__
+    >>> len(doc) > 1
+    True
+    >>> area_doc = __import__('7-base_geometry').BaseGeometry.area.__doc__
+    >>> len(area_doc) > 1
+    True
+    >>> int_val_doc = __import__('7-base_geometry').BaseGeometry.integer_validator.__doc__
+    >>> len(int_val_doc) > 1
+    True
+
+Positive values
+
+::
+    >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+    >>> bg = BaseGeometry()
+    >>> bg.integer_validator("my_int", 12)
+    >>> bg.integer_validator("width", 10)
+
+Null value and negative value
+    >>> bg.integer_validator("Deadpool", 0)
+    Traceback (most recent call last):
+    ...
+    ValueError: Deadpool must be greater than 0
+
+::
+
+    >>> bg.integer_validator("Annilus", -2)
+    Traceback (most recent call last):
+    ...
+    ValueError: Annilus must be greater than 0
+
+Non-int types
+
+::
+    >>> bg.integer_validator("Annilus", 3.4)
+    Traceback (most recent call last):
+    ...
+    TypeError: Annilus must be an integer
+
+::
+
+    >>> bg.integer_validator("WorldBreakerHulk", [])
+    Traceback (most recent call last):
+    ...
+    TypeError: WorldBreakerHulk must be an integer
+
+::
+
+    >>> bg.integer_validator("RedRechard", [1,2,3])
+    Traceback (most recent call last):
+    ...
+    TypeError: RedRechard must be an integer
+
+::
+
+    >>> bg.integer_validator("Dominions", float('inf'))
+    Traceback (most recent call last):
+    ...
+    TypeError: Dominions must be an integer
+
+    >>> bg.integer_validator("Cyclops", "xmen")
+    Traceback (most recent call last):
+    ...
+    TypeError: Cyclops must be an integer
+
+    >>> bg.integer_validator("Uranos", True)
+
+::
+    >>> bg.integer_validator("Ekaris", {})
+    Traceback (most recent call last):
+    ...
+    TypeError: Ekaris must be an integer
+
+    >>> bg.integer_validator("Jaro", {"staro": "conqueror", "jaro": "dad"})
+    Traceback (most recent call last):
+    ...
+    TypeError: Jaro must be an integer
+
+Missing arguments
+
+    >>> bg.integer_validator("Reacher")
+    Traceback (most recent call last):
+    ...
+    TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+    >>> bg.integer_validator()
+    Traceback (most recent call last):
+    ...
+    TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
