@@ -5,7 +5,7 @@ and methods of an object
 """
 
 
-def lookup(obj: object) -> list:
+def lookup(obj):
     """ Returns a list of attributes
      and methods of an object
         Args:
