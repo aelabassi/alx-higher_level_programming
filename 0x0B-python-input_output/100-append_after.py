@@ -6,7 +6,8 @@ Search and update
 
 def append_after(filename="", search_string="", new_string=""):
     """
-    inserts a line of text ro a file, after each line containing a specific string
+    inserts a line of text ro a file, after each
+    line containing a specific string
     Args:
         filename: (str) file
         search_string: (str) search string
