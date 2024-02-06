@@ -11,9 +11,6 @@ def append_after(filename="", search_string="", new_string=""):
         filename: (str) file
         search_string: (str) search string
         new_string: (str) string to insert
-
-    Returns:
-
     """
     with open(filename, "r+") as file:
         lines = file.readlines()
