@@ -19,7 +19,7 @@ def append_after(filename="", search_string="", new_string=""):
         lines = file.readlines()
         index = 0
         for line in lines:
-            if line.find(search_string) != -1:
+            if line.find(search_string) is not -1:
                 lines.insert(index + 1, new_string)
             index += 1
         file.seek(0)
