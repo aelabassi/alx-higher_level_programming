@@ -98,7 +98,8 @@ class Rectangle(Base):
 
     def __str__(self):
         """__str__ method"""
-        str_ = f"[{self.__class__.__name__}] ({self.id}) {self.__x}/{self.__y} - {self.__width}/{self.__height}"
+        str_ = f"[{self.__class__.__name__}] ({self.id}) {self.__x}/{self.__y}"
+        str_ += f" - {self.__width}/{self.__height}"
         return str_
 
     def area(self):
