@@ -96,6 +96,11 @@ class Rectangle(Base):
             raise ValueError("y must be >= 0")
         self.__y = value
 
+    def __str__(self):
+        """__str__ method"""
+        str_ = f"[{self.__class__.__name__}] ({self.id}) {self.__x}/{self.__y} - {self.__width}/{self.__height}"
+        return str_
+
     def area(self):
         """Area of the rectangle"""
         return self.__width * self.__height
@@ -108,7 +113,16 @@ class Rectangle(Base):
             rec += " " * self.__x + "#" * self.__width + "\n"
         print(rec, end="")
 
-    def __str__(self):
-        """__str__ method"""
-        str_ = f"[{self.__class__.__name__}] ({self.id}) {self.__x}/{self.__y} - {self.__width}/{self.__height}"
-        return str_
+    def update(self, *args, **kwargs):
+        """sets the arguments of type no-keyword-arg"""
+        if len(args) == 0:
+            for key, value in kwargs.items():
+                self.__setattr__(key, value)
+        try:
+            self.id = args[0]
+            self.__width = args[1]
+            self.__height = args[2]
+            self.__x = args[3]
+            self.__y = args[4]
+        except IndexError:
+            pass
