@@ -47,3 +47,36 @@ class Base:
                 contents.append(item_dec)
         with open(file, "w") as f:
             json.dump(contents, f)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """Returns an instance with all attributes already set"""
+        from models.rectangle import Rectangle
+        from models.square import Square
+
+        obj = None
+        if cls.__name__ == "Rectangle":
+            obj = Rectangle(2, 3)
+        elif cls.__name__ == "Square":
+            obj = Square(6)
+        obj.update(**dictionary)
+        return obj
+
+    @classmethod
+    def load_from_file(cls):
+        """Returns a list of instances"""
+        file = cls.__name__ + ".json"
+        try:
+            with open(file, encoding="utf-8") as f:
+                content = cls.from_json_string(f.read())
+        except:
+            return []
+
+        instances = []
+        for ins in content:
+            instances.append(cls.create(**ins))
+        return instances
+
+
+
+
