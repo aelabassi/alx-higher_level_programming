@@ -31,8 +31,6 @@ class Base:
             return []
         return json.loads(json_string)
 
-
-
     @classmethod
     def save_to_file(cls, list_objs):
         """Writes the JSON string representation of list_objs
@@ -69,14 +67,10 @@ class Base:
         try:
             with open(file, encoding="utf-8") as f:
                 content = cls.from_json_string(f.read())
-        except:
+        except Exception as e:
             return []
 
         instances = []
         for ins in content:
             instances.append(cls.create(**ins))
         return instances
-
-
-
-

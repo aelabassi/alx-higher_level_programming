@@ -138,7 +138,3 @@ class Rectangle(Base):
             "width": getattr(self, "width")
         }
         return dict_
-
-
-
-
