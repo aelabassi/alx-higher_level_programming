@@ -16,11 +16,28 @@ class Rectangle(Base):
         self.y = y
         super().__init__(id)
 
+    # getters
     @property
     def width(self):
         """getter: returns the with"""
         return self.__width
 
+    @property
+    def height(self):
+        """getter: returns the height"""
+        return self.__height
+
+    @property
+    def x(self):
+        """getter: returns x"""
+        return self.__x
+
+    @property
+    def y(self):
+        """getter: returns y"""
+        return self.__y
+
+    # setters
     @width.setter
     def width(self, value):
         """sets the value of with
@@ -35,11 +52,6 @@ class Rectangle(Base):
         if value <= 0:
             raise ValueError("width must be > 0")
         self.__width = value
-
-    @property
-    def height(self):
-        """getter: returns the height"""
-        return self.__height
 
     @height.setter
     def height(self, value):
@@ -56,11 +68,6 @@ class Rectangle(Base):
             raise ValueError("height must be > 0")
         self.__height = value
 
-    @property
-    def x(self):
-        """getter: returns x"""
-        return self.__x
-
     @x.setter
     def x(self, value):
         """sets the value of x
@@ -75,11 +82,6 @@ class Rectangle(Base):
         if value < 0:
             raise ValueError("x must be >= 0")
         self.__x = value
-
-    @property
-    def y(self):
-        """getter: returns y"""
-        return self.__y
 
     @y.setter
     def y(self, value):
