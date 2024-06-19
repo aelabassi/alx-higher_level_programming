@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/node
 const dict = require('./101-data').dict;
 const listKV = Object.entries(dict);
 const values = Object.values(dict);
