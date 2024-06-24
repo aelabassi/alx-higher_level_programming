@@ -11,13 +11,13 @@ if __name__ == "__main__":
     from sqlalchemy import (create_engine)
 
     if len(sys.argv) == 4:
-        db = create_engine('mysql+mysqldb://{}:{}@localhost/{}'
+        db = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'
                            .format(sys.argv[1], sys.argv[2], sys.argv[3]),
                            pool_pre_ping=True)
         Base.metadata.create_all(db)
         session = sessionmaker(bind=db)
         session = session()
-        for city, state in session.query(City.id, State.name, City.name)\
+        for city, state in session.query(City, State)\
                 .filter(
                 City.state_id == State.id).all():
             print("{}: ({}) {}".format(state.name, city.id, city.name))
