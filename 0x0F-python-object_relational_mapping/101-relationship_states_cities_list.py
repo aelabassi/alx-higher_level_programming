@@ -1,4 +1,4 @@
-#!/usr/bin/pythn3
+#!/usr/bin/python3
 """
 List all `State` objects, and corresponding `City` objects,
 contained in the database `hbtn_0e_101_usa`
@@ -11,7 +11,7 @@ from relationship_city import City
 
 if __name__ == "__main__":
     username, password, database = sys.argv[1], sys.argv[2], sys.argv[3]
-    engine = create_engine("mysql+mysqldb://{}:{}@localhost/{}"
+    engine = create_engine("mysql+mysqldb://{}:{}@localhost:3306/{}"
                            .format(username, password, database),
                            pool_pre_ping=True)
 
