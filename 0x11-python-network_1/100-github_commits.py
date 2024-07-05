@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """" script that list the 10 recent commits of a repository """
 import requests
 import sys
