@@ -40,7 +40,6 @@ def auth_github():
     """auth github"""
     url = "https://api.github.com/user"
     username = "aelabassi"
-    # password = "Hyperkmcu@2030"
     password = os.environ.get('github_token')
     print(os.environ.get("github_token"))
     response = requests.get(url, auth=(username, password))
