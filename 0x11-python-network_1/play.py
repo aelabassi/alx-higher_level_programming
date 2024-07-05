@@ -43,7 +43,7 @@ def auth_github():
     password = os.environ.get('github_token')
     print(os.environ.get("github_token"))
     response = requests.get(url, auth=(username, password))
-    print(response.json()["bio"])
+    print(response.json())
 
 
 auth_github()
