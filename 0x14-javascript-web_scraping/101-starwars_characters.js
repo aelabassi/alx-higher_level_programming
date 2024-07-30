@@ -29,7 +29,9 @@ const printCharacters = (characters, index) => {
       console.log(error);
     } else {
       console.log(JSON.parse(body).name);
-      printCharacters(characters, index + 1);
+      if(index + 1 < characters.length) {
+        printCharacters(characters, index + 1);
+      }
     }
   });
 };
