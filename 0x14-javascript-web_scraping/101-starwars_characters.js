@@ -8,13 +8,7 @@ request(url, function (error, response, body) {
     console.log(error);
   } else {
     const characters = JSON.parse(body).characters;
-    characters.forEach((character) => {
-      request(character, function (error, response, body) {
-        if (error) {
-          console.log(error);
-        } else {
-          printCharacters(characters, 0);
-        }
+    printCharacters(characters, 0);
       });
     });
   }
