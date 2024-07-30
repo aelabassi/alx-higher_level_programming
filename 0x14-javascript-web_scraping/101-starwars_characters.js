@@ -9,8 +9,6 @@ request(url, function (error, response, body) {
   } else {
     const characters = JSON.parse(body).characters;
     printCharacters(characters, 0);
-      });
-    });
   }
 });
 
